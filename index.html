@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simulation App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <ul>
+        <li><p>Simulation App</p></li>
+        <li style="float:right"><div class="navbtn">
+          <button class="dropbtn" id="btnLogIn" onclick="ChangeState()">|||
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <div id="setup">
+                <table>
+                    <tr>
+                        <td>Amount1:</td>
+                        <td><input id="inputAmount1" type="number" value="3" ></td>
+                    </tr>
+                    <tr>
+                        <td>Safety stock 1:</td>
+                        <td><input id="inputSafetyAmount1" type="number" value="1" ></td>
+                    </tr>
+                    <tr>
+                        <td>Amount2:</td>
+                        <td><input id="inputAmount2" type="number" value="10" ></td>
+                    </tr>                       
+                    <tr>
+                        <td>Safety stock 2:</td>
+                        <td><input id="inputSafetyAmount2" type="number" value="1" ></td>
+                    </tr>  
+                    <tr>
+                        <td>Temperature:</td>  
+                        <td><input id="inputTemp" type="number" value="5" ></td>                          
+                    </tr> 
+                    <tr>
+                        <td>Safety Temperature:</td>  
+                        <td><input id="inputSafetyTemp" type="number" value="0" ></td>                          
+                    </tr>  
+                    <tr>
+                        <td colspan="2"><input onclick="SetStartStock()" id="SubmitBtn" type="submit" value="complete"> </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </li>      
+      </ul>
+    <main>
+        <button onclick="CheckIfWarehouseExist()">key</button>
+        <!--notifications-->
+        <div id="notificationsBar">
+            request for shelf 1 has been send
+        </div>
+        
+        <table class="MainTable">
+            <tr>
+                <td></td>
+                <td>
+                    <table style="display: inline">
+                        <tr>
+                            <th><input type="text"></th>
+                        </tr> 
+                    </table>
+                    <table style="display: inline">
+                        <tr>
+                            <th><input type="text"></th>
+                        </tr> 
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <table id="table1" style="display: inline;">                       
+                        <tr>
+                            <td id="Amount1Value"></td>
+                        </tr>
+                    </table>
+                    <table id="table2" style="display: inline;" >                            
+                        <tr>
+                            <td id="Amount2Value"> </td>
+                        </tr>
+                    </table>
+                    <div id="tempDiv">
+                        <p id="AmountTemp">temperature:</p>
+                        <button onclick="TempDown()">-</button>
+                        <label onclick="TriggerAutoTemp()" for="chAuto">Auto:</label>
+                        <input onclick="TriggerAutoTemp()" id="chAuto" type="checkbox" name="chAuto">
+                        <button onclick="TempUp()">+</button>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>      
+        
+    </main>
+    </main> 
+    <script src="script.js"></script>
+  </body>  
+</html>
+
